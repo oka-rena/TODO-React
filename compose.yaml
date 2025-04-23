@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./my-app:/app/my-app
+      - /node_modules
