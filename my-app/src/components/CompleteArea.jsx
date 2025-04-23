@@ -1,7 +1,8 @@
-import { deleteFromArray } from "../helpers/DeleteFromArray";
-import { addToArray } from "../helpers/AddToArray";
+import { arrayHelper } from "../helpers/processToArray";
 
 export const CompleteArea = ({ todos, setIncompleteTodos, setCompleteTodos }) => {
+    const { addToArray, deleteFromArray } = arrayHelper();
+
     const handleBackTodo = (index) => {
         addToArray(setIncompleteTodos, todos[index]);
         deleteFromArray(setCompleteTodos, index)

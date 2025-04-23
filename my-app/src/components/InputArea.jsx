@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { addToArray } from '../helpers/AddToArray';
+import { arrayHelper } from '../helpers/processToArray';
 
 export const InputArea = ({ setTodos }) => {
     const [addText, setAddText] = useState('');
     const [isDisabled, setDisabled] = useState(true);
+
+    const { addToArray } = arrayHelper();
 
     const handleAddTodo = () => {
         if (addText === '') return;
