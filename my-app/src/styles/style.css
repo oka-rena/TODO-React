@@ -22,6 +22,10 @@ button:hover {
     cursor: pointer;
 }
 
+button:disabled {
+    cursor: not-allowed;
+}
+
 .input-area {
     background-color: #c6e5d9;
     width: 400px;

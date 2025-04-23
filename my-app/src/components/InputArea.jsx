@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { addToArray } from '../helpers/AddToArray';
 
 export const InputArea = ({ setTodos }) => {
     const [addText, setAddText] = useState('');
+    const [isDisabled, setDisabled] = useState(true);
 
     const handleAddTodo = () => {
+        if (addText === '') return;
         addToArray(setTodos, addText);
         setAddText('');
     }
+
+    useEffect(() => {
+        addText === "" ? setDisabled(true) : setDisabled(false);
+    }, [addText])
 
     return(
         <div className="input-area">
@@ -17,7 +23,12 @@ export const InputArea = ({ setTodos }) => {
                 value={addText} 
                 onChange={(e) => setAddText(e.target.value)} 
             />
-            <button onClick={handleAddTodo}>追加</button>
+            <button 
+                onClick={handleAddTodo} 
+                disabled={isDisabled}
+            >
+                追加
+            </button>
         </div>
     );
 }

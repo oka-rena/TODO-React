@@ -1,5 +1,5 @@
-import { deleteFromArray } from "../helpers/DeleteFromArray";
 import { addToArray } from "../helpers/AddToArray";
+import { deleteFromArray } from "../helpers/DeleteFromArray";
 
 export const InCompleteArea = ({ todos, setIncompleteTodos, setCompleteTodos }) => {
 
