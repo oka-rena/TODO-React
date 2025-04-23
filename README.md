@@ -26,7 +26,7 @@ Docker desktop のインストールが必要です。
 ```bash
     docker compose build --no-cache
 ```
-*(目安: 約20秒)*
+(目安: 約20秒)
 
 3. dockerを起動させる
 ```bash
@@ -43,7 +43,7 @@ Docker desktop のインストールが必要です。
 ```bash
     yarn install
 ```
-*(目安: 約3～4分)*
+(目安: 約3～4分)
 
 6. アプリを起動させる
 ```bash
@@ -51,4 +51,4 @@ Docker desktop のインストールが必要です。
 ```
 コマンドを打つと、「yarn run」と表示され、立ち上げが始まります。
 1分ほど待つと、緑色の文字で「successfully」と表示されるので、
-http://localhost:3000[http://localhost:3000] にアクセスしてください。
+`http://localhost:3000` にアクセスしてください。
