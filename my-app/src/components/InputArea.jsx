@@ -1,11 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { arrayHelper } from '../helpers/processToArray';
 
 export const InputArea = ({ setTodos }) => {
     const [addText, setAddText] = useState('');
-    const [isDisabled, setDisabled] = useState(true);
+    const [isDisabled, setIsDisabled] = useState(true);
 
     const { addToArray } = arrayHelper();
+
+    const handleChangeText = (value) => {
+        setAddText(value);
+        value === '' ? setIsDisabled(true) : setIsDisabled(false);
+    }
 
     const handleAddTodo = () => {
         if (addText === '') return;
@@ -13,17 +18,13 @@ export const InputArea = ({ setTodos }) => {
         setAddText('');
     }
 
-    useEffect(() => {
-        addText === "" ? setDisabled(true) : setDisabled(false);
-    }, [addText])
-
     return(
         <div className="input-area">
             <input 
                 type="text" 
                 placeholder="TODOを入力" 
                 value={addText} 
-                onChange={(e) => setAddText(e.target.value)} 
+                onChange={(e) => handleChangeText(e.target.value)} 
             />
             <button 
                 onClick={handleAddTodo} 
