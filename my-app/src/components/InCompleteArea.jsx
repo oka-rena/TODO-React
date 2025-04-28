@@ -1,14 +1,14 @@
 import { arrayHelper } from "../helpers/processToArray";
 
-export const InCompleteArea = ({ todos, setIncompleteTodos, setCompleteTodos }) => {
+export const IncompleteArea = ({ todos, setIncompleteTodos, setCompleteTodos }) => {
     const { addToArray, deleteFromArray } = arrayHelper();
 
-    const handleCompleteButton = (index) => {
+    const handleCompleteTodo = (index) => {
         addToArray(setCompleteTodos, todos[index]);
         deleteFromArray(setIncompleteTodos, index);
     };
 
-    const handleDeleteButton = (index) => {
+    const handleDeleteTodo = (index) => {
         deleteFromArray(setIncompleteTodos, index);
     };
 
@@ -21,8 +21,8 @@ export const InCompleteArea = ({ todos, setIncompleteTodos, setCompleteTodos }) 
                         <li key={index}>
                             <div className="list-row">
                                 <p className="todo-item">{todo}</p>
-                                <button onClick={() => handleCompleteButton(index)}>完了</button>
-                                <button onClick={() => handleDeleteButton(index)}>削除</button>
+                                <button onClick={() => handleCompleteTodo(index)}>完了</button>
+                                <button onClick={() => handleDeleteTodo(index)}>削除</button>
                             </div>
                         </li>
                     ))}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InputArea } from './components/InputArea';
-import { InCompleteArea } from './components/InCompleteArea';
+import { IncompleteArea } from './components/IncompleteArea';
 import { CompleteArea } from './components/CompleteArea';
 import './styles/style.css';
 
@@ -11,7 +11,7 @@ export const Todo = () => {
     return(
         <>
             <InputArea setTodos={setIncompleteTodos} />
-            <InCompleteArea 
+            <IncompleteArea 
                 todos={incompleteTodos} 
                 setIncompleteTodos={setIncompleteTodos}  
                 setCompleteTodos={setCompleteTodos}
